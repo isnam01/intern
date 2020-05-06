@@ -5,7 +5,7 @@
 
 .row-content{
     margin:0px auto;
-    padding:30px 0px 30px;
+    padding:50px 0px 50px 0px;
     border-bottom:1px ridge;
     min-height:400px;
 }
@@ -19,14 +19,14 @@
 .jumbotron{
     padding:70px 30px 70px 30px;
     margin:0px auto;
-    background-color: violet;
-    color: white;
+    background-color:#9575CD ;
+    color: rgb(255, 255, 255);
 }
 
 .address{
     font-size:80%;
     margin: 0px;
-    color:plum;
+    color:#0f0f0f;
 }
 body{
     padding:50px 0px 0px 0px;
@@ -38,4 +38,7 @@ body{
 }
 .radio-inline{
     padding: 10px;
+}
+.btn{
+    background-color: rgb(255, 217, 0);
 }
