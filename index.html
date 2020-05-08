@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"></a>
@@ -29,7 +29,7 @@
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginmodal">
+                    <a class ="loginbutton">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span> 
@@ -41,7 +41,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class ="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="reservemodalclose">
                         &times;
                     </button>
                 </div>
@@ -73,7 +73,7 @@
                         <div class="form-group row">
                             <label form="type" class="col-md-3 col-form-label">Section</label>
                             <div class="col-md-8">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <div class="btn-group btn-group-toggle" >
                                     <label class="btn btn-success active " style="color: white; ">
                                       <input type="radio" name="options" id="option1" autocomplete="off"  aria-pressed="true" > Non-Smoking
                                     </label>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="form-group">
                             
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto reservemodalclose" >Cancel</button>
                             <button type="button" class="btn btn-primary btn-sm ml-1">Reserve</button>        
                             
                         </div>
@@ -108,7 +108,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class ="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="loginmodalclose" >
                         &times;
                     </button>
                 </div>
@@ -133,7 +133,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto close loginmodalclose">Cancel</button>
                                 <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                             </div>
                     </form>
@@ -156,9 +156,7 @@
                     <img src="img/logo.png" class="img-fluid">
                     </div>
                     <div class="col-12 col-sm align-items-center">
-                        <a data-toggle="modal" data-target="#reserveform">
-                            <span class="btn btn-block btn-warning" style=" background-color: rgb(255, 217, 0);">Reserve a Table</span>
-                        </a>
+                        <span class="btn btn-block btn-warning reservebutton" style=" background-color: rgb(255, 217, 0);">Reserve a Table</span>
                     </div>
                   
                 </div>
@@ -326,8 +324,24 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+    <script>        
             $(document).ready(function(){
+                $('.loginbutton').click(function(){
+                $('#loginmodal').modal("toggle");
+                $('#loginmodal').modal("show");
+            });
+
+            $(".loginmodalclose").click(function(){
+                $('#loginmodal').modal("hide");
+            });
+
+            $('.reservebutton').click(function(){
+                $('#reserveform').modal("toggle");
+                $('#reserveform').modal("show");
+            });
+            $(".reservemodalclose").click(function(){
+                $('#reserveform').modal("hide");
+            });
                 $('#mycarousel').carousel({interval:2000});
                 $("#carouselbutton").click(function(){
                 if ($("#carouselbutton").children("span").hasClass('fa-pause')) {
