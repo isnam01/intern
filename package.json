@@ -34,7 +34,7 @@
     "nodejs": "0.0.0",
     "popper.js": "^1.12.9",
     "scss": "^0.2.4",
-    "uglify-js": "^2.4.11",
+    "uglify-js": "^2.6.0",
     "usemin-cli": "^0.5.1"
   }
 }
